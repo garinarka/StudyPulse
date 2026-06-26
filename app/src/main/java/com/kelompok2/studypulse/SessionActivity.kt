@@ -70,7 +70,7 @@ class SessionActivity : AppCompatActivity() {
         isBreakTime = false
         timeLeft = totalTime
         circularProgress.currentValue = timeLeft
-        tvStatus.text = getString(R.string.status_belajar)
+        tvStatus.text = getString(R.id.tvStatus)
         updateTimerText()
     }
 
@@ -85,7 +85,7 @@ class SessionActivity : AppCompatActivity() {
             isBreakTime = false
             sessionCount++
             timeLeft = totalTime
-            tvStatus.text = getString(R.string.status_belajar)
+            tvStatus.text = getString(R.id.tvStatus)
         }
         circularProgress.maxValue = timeLeft
         circularProgress.currentValue = timeLeft
