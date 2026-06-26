@@ -1,20 +1,34 @@
 package com.kelompok2.studypulse
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val btnMulaiBelajar = findViewById<android.widget.LinearLayout>(R.id.btnMulaiBelajar)
+        val btnTeknikPomodoro = findViewById<android.widget.LinearLayout>(R.id.btnTeknikPomodoro)
+        val btnTipsFokus = findViewById<android.widget.LinearLayout>(R.id.btnTipsFokus)
+        val btnTentang = findViewById<android.widget.LinearLayout>(R.id.btnTentang)
+
+        btnMulaiBelajar.setOnClickListener {
+            startActivity(Intent(this, SessionActivity::class.java))
+        }
+
+        btnTeknikPomodoro.setOnClickListener {
+            startActivity(Intent(this, PomodoroActivity::class.java))
+        }
+
+        btnTipsFokus.setOnClickListener {
+            startActivity(Intent(this, TipsActivity::class.java))
+        }
+
+        btnTentang.setOnClickListener {
+            startActivity(Intent(this, AboutActivity::class.java))
         }
     }
 }
