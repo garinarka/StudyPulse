@@ -22,4 +22,7 @@
     <color name="text_white_secondary">#CCFFFFFF</color>
 
     <color name="icon_circle_overlay">#33FFFFFF</color>
+
+    <color name="red_primary">#FFE8765C</color>
+    <color name="red_soft">#FFFCE4DE</color>
 </resources>
