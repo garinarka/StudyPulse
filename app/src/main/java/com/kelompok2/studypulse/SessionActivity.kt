@@ -2,6 +2,7 @@ package com.kelompok2.studypulse
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +30,7 @@ class SessionActivity : AppCompatActivity() {
         circularProgress = findViewById(R.id.circularProgress)
         btnMulai = findViewById(R.id.btnMulaiSession)
 
-        findViewById<android.widget.ImageView>(R.id.btnBack).setOnClickListener { finish() }
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener { finish() }
 
         circularProgress.maxValue = totalTime
         circularProgress.currentValue = timeLeft
@@ -69,8 +70,9 @@ class SessionActivity : AppCompatActivity() {
         isRunning = false
         isBreakTime = false
         timeLeft = totalTime
+        circularProgress.maxValue = totalTime
         circularProgress.currentValue = timeLeft
-        tvStatus.text = getString(R.id.tvStatus)
+        tvStatus.text = "Belajar"
         updateTimerText()
     }
 
@@ -85,7 +87,7 @@ class SessionActivity : AppCompatActivity() {
             isBreakTime = false
             sessionCount++
             timeLeft = totalTime
-            tvStatus.text = getString(R.id.tvStatus)
+            tvStatus.text = "Belajar"
         }
         circularProgress.maxValue = timeLeft
         circularProgress.currentValue = timeLeft
